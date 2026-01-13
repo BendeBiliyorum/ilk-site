@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.profile-card {
+    position: relative;
+    overflow: hidden;
+    max-width: 370px;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px 1px #333;
+    border-radius: 24px;
+}
+
+.img-bg {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background-color: #4070f4;
+    z-index: 1;
+}
+
+.img-div {
+    width: 150px;
+    height: 150px;
+    background-color: #4070f4;
+    border-radius: 50%;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.img-div img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transition: 0.5s;
+}
+
+.img-div img:hover {
+    transform: scale(1.1);
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 50px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.about .ds-none {
+    display: none;
+}
+
+.about .name {
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.about .name:hover {
+    color: #4070f4;
+    transform: translateX(10px);
+    transition: 0.5s;
+}
+
+.about .name:hover>.ds-none {
+    transition: 0.5s;
+    display: inline-block;
+}
+
+.about .job {
+    font-weight: 400;
+    font-size: 16px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.about .job:hover {
+    color: #4070f4;
+    transform: translateX(10px);
+    transition: 0.5s;
+}
+
+.about .job:hover>.ds-none {
+    transition: 0.5s;
+    display: inline-block;
+}
+
+.social {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.social .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0px 0px 8px 1px #333;
+    width: 45px;
+    height: 45px;
+    font-size: 27px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.social .link:hover {
+    transform: scale(1.1);
+}
+
+.interaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 45px;
+    margin-top: 20px;
+}
+
+.interaction .emojies {
+    text-decoration: none;
+    color: #333;
+    transition: 0.5s;
+}
+
+.interaction .emojies:hover {
+    color: #4070f4;
+}
+
+.lbl-changer {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    color: #1a1a1a;
+    cursor: pointer;
+    font-size: 30px;
+
+}
+
+.theme-checkbox {
+    display: none;
+}
+
+
+.theme-checkbox:checked~.lbl-changer {
+    color: #fff;
+}
+
+.theme-checkbox:checked~.bg {
+    transition: 0.5s;
+    background-color: #1a1a1a;
+}
+
+.theme-checkbox:checked ~ .bg .profile-card {
+    box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, 0.1);
+}
+
+.theme-checkbox:checked~.bg .profile-card .about {
+    color: #fff;
+}
+
+.theme-checkbox:checked~.bg .profile-card .interaction .emojies {
+    color: #fff;
+}
+
+.theme-checkbox:checked~.bg .profile-card .social .link {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 1px #fff;
+}
+
+.theme-checkbox:checked~.bg .img-div img {
+    border: 3px solid #1a1a1a;
+}
